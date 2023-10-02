@@ -1,13 +1,13 @@
 <template>
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">VueCommerce</a>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light shadow-sm">
+        <div class="container justify-content-end p-2">
+            <router-link class="navbar-brand" to="/">VueCommerce</router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
+                <div class="navbar-nav ms-auto">
                     <router-link class="nav-link" to="/">Home</router-link>
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -53,3 +53,12 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.navbar-brand {
+    font-weight: bold;
+}
+.nav-link {
+    font-weight: 500;
+}
+</style>
