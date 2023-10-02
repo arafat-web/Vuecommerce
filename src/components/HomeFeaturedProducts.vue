@@ -4,7 +4,7 @@
         <div class="border-bottom mb-5"></div>
         <div class="row">
             <div v-for="(product, index) in featuredProducts" :key="index" class="col-md-3">
-                <div class="card p-3 h-100">
+                <div class="card p-3 h-100 border-0 shadow">
                     <div class="card-img">
                         <img :src="product.image" alt="Product Image">
                     </div>
