@@ -55,38 +55,47 @@ export default {
             relatedProducts: []
         };
     },
-    mounted() {
-        // Fetch the specific product based on the route parameter (product ID) when the component is mounted
-        const productId = this.$route.params.id;
-        fetch(`https://fakestoreapi.com/products/${productId}`)
-            .then(response => response.json())
-            .then(data => {
-                // Update product data in the component
-                this.product = data;
-            })
-            .catch(error => {
-                console.error("Error fetching product details:", error);
-            });
-
-        // Fetch related products (you may define your own logic to determine related products)
-        fetch("https://fakestoreapi.com/products")
-            .then(response => response.json())
-            .then(data => {
-                // Exclude the current product from related products
-                this.relatedProducts = data.filter(product => product.id !== parseInt(productId)).slice(0, 4);
-            })
-            .catch(error => {
-                console.error("Error fetching related products:", error);
-            });
+    watch: {
+        '$route.params.id': 'fetchData'
     },
     methods: {
+        async fetchData() {
+            const productId = this.$route.params.id;
+
+            try {
+                let [productResponse, productsResponse] = await Promise.all([
+                    fetch(`https://fakestoreapi.com/products/${productId}`),
+                    fetch("https://fakestoreapi.com/products")
+                ]);
+
+                if (productResponse.ok) {
+                    this.product = await productResponse.json();
+                } else {
+                    console.error("Error fetching product details:", productResponse.status);
+                }
+
+                if (productsResponse.ok) {
+                    let data = await productsResponse.json();
+                    this.relatedProducts = data.filter(product => product.id !== parseInt(productId)).slice(0, 4);
+                } else {
+                    console.error("Error fetching related products:", productsResponse.status);
+                }
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        },
         generateStarRating(rating) {
             const roundedRating = Math.round(rating * 2) / 2;
             const stars = '⭐'.repeat(Math.floor(roundedRating));
             const halfStar = (roundedRating % 1 !== 0) ? '⭐' : '';
             return `${stars}${halfStar}`;
         }
+    },
+    async created() {
+        await this.fetchData();
     }
+
+
 }
 </script>
 
