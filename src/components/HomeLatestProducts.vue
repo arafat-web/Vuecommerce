@@ -4,7 +4,7 @@
         <div class="border-bottom mb-5"></div>
         <div class="row">
             <div v-for="(product, index) in lastestProducts" :key="index" class="col-md-3 mb-4">
-                <div class="card p-3 h-100 border-0 shadow">
+                <div class="card p-3 h-100 border-0 shadow-sm">
                     <div class="card-img">
                         <img :src="product.image" alt="Product Image">
                     </div>
@@ -33,7 +33,7 @@ export default {
         fetch("https://fakestoreapi.com/products")
             .then(response => response.json())
             .then(data => {
-                this.lastestProducts = data.slice(0, 8);
+                this.lastestProducts = data;
             })
             .catch(error => {
                 console.error("Error fetching featured products:", error);
@@ -63,7 +63,13 @@ a:hover {
     text-decoration: underline;
     opacity: 0.8;
 }
-
+.card{
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.card:hover {
+    transform: scale(1.05);
+}
 .card-text {
     font-weight: 300;
 }

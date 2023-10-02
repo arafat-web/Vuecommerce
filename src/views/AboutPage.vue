@@ -40,8 +40,8 @@
             </div>
         </div>
         <div class="row mt-5">
-            <div class="col-lg-12 text-center">
-                <h3 class="text-uppercase mb-4 text-primary">Why Choose VueCommerce?</h3>
+            <div class="col-lg-12">
+                <h3 class="text-uppercase mb-4 text-primary text-center">Why Choose VueCommerce?</h3>
                 <p class="text-muted">
                     We understand that the online shopping landscape is vast and varied. So, why should you choose 
                     VueCommerce as your preferred destination? The answer lies in our unwavering commitment to 

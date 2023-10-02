@@ -1,6 +1,6 @@
 <template>
     <div class="container mt-5">
-        <div class="card">
+        <div class="card shadow-sm border-0">
             <div class="card-body">
                 <div v-if="product" class="row">
                     <div class="col-md-6">
@@ -12,7 +12,7 @@
                         <p class="text-capitalize"><strong>Category:</strong> {{ product.category }}</p>
                         <p><strong>Description:</strong> {{ product.description }}</p>
                         <div class="star-rating">
-                            {{ generateStarRating(product.rating.rate) }}
+                            {{ generateStarRating(product.rating.rate) }} ({{ product.rating.count }})
                         </div>
                         <div class="mt-4">
                             <button class="btn btn-primary me-2">Buy Now</button>
@@ -29,7 +29,7 @@
         <div class="border-bottom mb-5"></div>
         <div class="row">
             <div v-for="(relatedProduct, index) in relatedProducts" :key="index" class="col-md-3">
-                <div class="card p-3 h-100">
+                <div class="card p-3 h-100 shadow-sm border-0">
                     <div class="card-img">
                         <img :src="relatedProduct.image" class="img" alt="Related Product Image">
                     </div>
@@ -38,7 +38,7 @@
                         }}</router-link></h5>
                         <p class="card-text"><strong>Price: ${{ relatedProduct.price }}</strong></p>
                         <div class="star-rating">
-                            {{ generateStarRating(relatedProduct.rating.rate) }}
+                            {{ generateStarRating(relatedProduct.rating.rate) }} ({{ relatedProduct.rating.count }})
                         </div>
                     </div>
                 </div>

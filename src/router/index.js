@@ -3,6 +3,7 @@ import HomePage from '../views/HomePage.vue';
 import AboutPage from '../views/AboutPage.vue';
 import ProductDetailsPage from '../views/ProductDetailsPage.vue';
 import ContactPage from '../views/ContactPage.vue';
+import ProductCategory from '../views/ProductCategory.vue';
 const routes = [
   {
     path: '/',
@@ -23,7 +24,12 @@ const routes = [
     path: '/contact',
     name: 'ContactPage',
     component: ContactPage
-  }
+  },
+  {
+    path: '/category/:category', // Dynamic route parameter for category
+    name: 'ProductCategory',
+    component: ProductCategory // Use the ProductCategory component for this route
+  },
 
 ]
 

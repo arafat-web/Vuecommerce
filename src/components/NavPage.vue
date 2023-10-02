@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light shadow-sm">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white shadow-sm">
         <div class="container justify-content-end p-2">
             <router-link class="navbar-brand" to="/">VueCommerce</router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -60,5 +60,8 @@ export default {
 }
 .nav-link {
     font-weight: 500;
+}
+.nav-link:hover {
+    color: #000;
 }
 </style>

@@ -1,9 +1,10 @@
 <template>
-    <div class="container mt-5 pt-3">
-        <h3 class="text-center mb-4">Featured Products</h3>
+    <div class="product-category-container py-5">
+      <div class="container">
+        <h2 class="text-center mb-4 text-capitalize">Products in {{ category }}</h2>
         <div class="border-bottom mb-5"></div>
         <div class="row">
-            <div v-for="(product, index) in featuredProducts" :key="index" class="col-md-3 mb-4">
+            <div v-for="(product, index) in products" :key="index" class="col-md-3 mb-5">
                 <div class="card p-3 h-100 border-0 shadow-sm">
                     <div class="card-img">
                         <img :src="product.image" alt="Product Image">
@@ -19,25 +20,29 @@
                 </div>
             </div>
         </div>
+      </div>
     </div>
-</template>
-
-<script>
-export default {
+  </template>
+  
+  <script>
+  export default {
     data() {
-        return {
-            featuredProducts: []
-        };
+      return {
+        category: '', 
+        products: [] 
+      };
     },
-    mounted() {
-        fetch("https://fakestoreapi.com/products")
-            .then(response => response.json())
-            .then(data => {
-                this.featuredProducts = data.slice(0, 4);
-            })
-            .catch(error => {
-                console.error("Error fetching featured products:", error);
-            });
+    created() {
+      this.category = this.$route.params.category; 
+      
+      fetch(`https://fakestoreapi.com/products/category/${this.category}`)
+        .then(response => response.json())
+        .then(data => {
+          this.products = data;
+        })
+        .catch(error => {
+          console.error('Error fetching products:', error);
+        });
     },
     methods: {
         generateStarRating(rating) {
@@ -50,11 +55,37 @@ export default {
             return `${stars}${halfStarSymbol}`;
         }
     }
-}
-</script>
-
-<style scoped>
-a {
+  };
+  </script>
+  
+  <style scoped>
+  .product-category-container {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding: 60px 0;
+  }
+  
+  .product-card {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .product-card:hover {
+    box-shadow-sm: 0 0 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+    color: #007bff;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #333;
+  }
+  a {
     text-decoration: none;
     color: #000;
 }
@@ -63,13 +94,7 @@ a:hover {
     text-decoration: underline;
     opacity: 0.8;
 }
-.card{
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-.card:hover {
-    transform: scale(1.05);
-}
+
 .card-text {
     font-weight: 300;
 }
@@ -99,4 +124,5 @@ img {
     font-size: 15px;
     color: #FFD700;
 }
-</style>
+  </style>
+  

@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-light bottom text-center mt-5">
+    <div class="bg-white bottom text-center mt-5">
         <div class="container">
             <p class="p-5 text-black">Made with ❤️ by
                     <strong><a target="_blank" href="https://arafatdev.com">Arafat Hossain Ar</a></strong>

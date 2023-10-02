@@ -29,6 +29,7 @@ html, body {
 
 body {
   overflow-y: scroll;
+  background-color: #f8f9fa;
 }
 
 
