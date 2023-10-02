@@ -34,7 +34,7 @@
                         <img :src="relatedProduct.image" class="img" alt="Related Product Image">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title"><router-link :to="'/product/' + relatedProduct.id">{{ relatedProduct.title
+                        <h5 class="card-title"><router-link :to="'/Vuecommerce/product/' + relatedProduct.id">{{ relatedProduct.title
                         }}</router-link></h5>
                         <p class="card-text"><strong>Price: ${{ relatedProduct.price }}</strong></p>
                         <div class="star-rating">

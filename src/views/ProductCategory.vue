@@ -10,7 +10,7 @@
               <img :src="product.image" alt="Product Image">
             </div>
             <div class="card-body align-self-bottom">
-              <h6 class="card-title"><router-link :to="'/product/' + product.id">{{ product.title }}</router-link></h6>
+              <h6 class="card-title"><router-link :to="'/Vuecommerce/product/' + product.id">{{ product.title }}</router-link></h6>
               <p class="card-text p-0 mb-0 mt-3"><strong>Price: ${{ product.price }}</strong></p>
               <!-- Display star rating -->
               <div class="star-rating p-0 m-0">

@@ -6,27 +6,27 @@ import ContactPage from '../views/ContactPage.vue';
 import ProductCategory from '../views/ProductCategory.vue';
 const routes = [
   {
-    path: '/',
+    path: '/Vuecommerce',
     name: 'home',
     component: HomePage
   },
   {
-    path: '/about',
+    path: '/Vuecommerce/about',
     name: 'AboutPage',
     component: AboutPage
   },
   {
-    path: '/product/:id',
+    path: '/Vuecommerce/product/:id',
     name: 'productDetails',
     component: ProductDetailsPage
   },
   {
-    path: '/contact',
+    path: '/Vuecommerce/contact',
     name: 'ContactPage',
     component: ContactPage
   },
   {
-    path: '/category/:category',
+    path: '/Vuecommerce/category/:category',
     name: 'ProductCategory',
     component: ProductCategory
   },

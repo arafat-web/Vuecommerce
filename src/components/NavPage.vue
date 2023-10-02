@@ -1,14 +1,14 @@
 <template>
     <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white shadow-sm">
-        <div class="container justify-content-end p-2">
-            <router-link class="navbar-brand" to="/">VueCommerce</router-link>
+        <div class="container p-2">
+            <router-link class="navbar-brand" to="/Vuecommerce">VueCommerce</router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <router-link class="nav-link" to="/">Home</router-link>
+                    <router-link class="nav-link" to="/Vuecommerce">Home</router-link>
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -16,13 +16,13 @@
                         </a>
                         <ul class="dropdown-menu" id="categoryDropdown">
                             <li v-for="(category, index) in categories" :key="index">
-                                <router-link class="dropdown-item text-capitalize" :to="'/category/' + category">{{ category
+                                <router-link class="dropdown-item text-capitalize" :to="'/Vuecommerce/category/' + category">{{ category
                                 }}</router-link>
                             </li>
                         </ul>
                     </div>
-                    <router-link class="nav-link" to="/about">About Us</router-link>
-                    <router-link class="nav-link" to="/contact">Contact Us</router-link>
+                    <router-link class="nav-link" to="/Vuecommerce/about">About Us</router-link>
+                    <router-link class="nav-link" to="/Vuecommerce/contact">Contact Us</router-link>
                 </div>
             </div>
         </div>
