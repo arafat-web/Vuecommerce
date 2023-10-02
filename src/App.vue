@@ -26,4 +26,20 @@ html, body {
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
+
+body {
+  overflow-y: scroll;
+}
+
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+body {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+
 </style>
