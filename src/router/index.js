@@ -26,9 +26,9 @@ const routes = [
     component: ContactPage
   },
   {
-    path: '/category/:category', // Dynamic route parameter for category
+    path: '/category/:category',
     name: 'ProductCategory',
-    component: ProductCategory // Use the ProductCategory component for this route
+    component: ProductCategory
   },
 
 ]
