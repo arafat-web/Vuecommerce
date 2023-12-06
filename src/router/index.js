@@ -4,11 +4,12 @@ import AboutPage from '../views/AboutPage.vue';
 import ProductDetailsPage from '../views/ProductDetailsPage.vue';
 import ContactPage from '../views/ContactPage.vue';
 import ProductCategory from '../views/ProductCategory.vue';
+import Login from '../views/LoginPage.vue';
 const routes = [
   {
     path: '/Vuecommerce',
     name: 'home',
-    component: HomePage
+    component: HomePage,
   },
   {
     path: '/Vuecommerce/about',
@@ -30,6 +31,11 @@ const routes = [
     name: 'ProductCategory',
     component: ProductCategory
   },
+  {
+    path: '/Vuecommerce/login',
+    name: 'login',
+    component: Login
+  }
 
 ]
 

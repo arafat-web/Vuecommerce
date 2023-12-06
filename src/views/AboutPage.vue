@@ -83,6 +83,9 @@
 
 export default {
     name: 'AboutPage',
+    created() {
+        document.title = 'About | VueCommerce';
+    }
 }
 
 </script>

@@ -42,6 +42,9 @@
         }
       };
     },
+    created() {
+      document.title = 'Contact Us | Vuecommerce';
+    },
     methods: {
       submitForm() {
         // Handle form submission logic here

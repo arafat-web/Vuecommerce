@@ -7,7 +7,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ms-auto">
+                <div class="navbar-nav m-auto">
                     <router-link class="nav-link" to="/Vuecommerce">Home</router-link>
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -23,6 +23,16 @@
                     </div>
                     <router-link class="nav-link" to="/Vuecommerce/about">About Us</router-link>
                     <router-link class="nav-link" to="/Vuecommerce/contact">Contact Us</router-link>
+                </div>
+                <div class="ms-auto">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <router-link class="nav-link" to="/Vuecommerce/cart">Cart (0) </router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link btn btn-primary text-white px-3" to="/Vuecommerce/login">Login</router-link>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

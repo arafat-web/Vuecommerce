@@ -57,6 +57,7 @@ export default {
     },
     watch: {
         '$route.params.id': 'fetchData'
+        
     },
     methods: {
         async fetchData() {
@@ -93,6 +94,7 @@ export default {
     },
     async created() {
         await this.fetchData();
+        document.title = `${this.product.title} | Vuecommerce`;
     }
 
 

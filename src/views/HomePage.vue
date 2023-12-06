@@ -22,6 +22,9 @@ export default {
         HomeLatestProducts,
         HomeTestimonials,
         HomeSwiper
+    },
+    created() {
+        document.title = 'Home | VueCommerce';
     }
 }
 </script>

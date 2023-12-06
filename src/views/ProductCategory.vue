@@ -35,6 +35,7 @@ export default {
   async created() {
     this.category = this.$route.params.category;
     await this.fetchData();
+    document.title = `Products in ${this.category} | Vuecommerce`;
   },
   watch: {
     '$route.params.category': 'fetchData'
@@ -81,7 +82,7 @@ export default {
 }
 
 .product-card:hover {
-  box-shadow-sm: 0 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   transform: translateY(-5px);
 }
 
